@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --fw-Regular: 400;
+    --fw-Medium: 500;
+    --fw-Bold: 700;
+    --Primary-Color: #0c5adb;
+    --Sec-Primary-Color: #111a3a;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+header,
+section,
+footer {
+    width: 100%;
+}
+
+header {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.09);
+}
+
+section {
+    padding: 3rem 0;
+}
+
+nav,
+.container {
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+/* // Navbar // */
+nav,
+.menu-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .navbar:last-of-type {
+    display: none;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar .nav-item {
+    list-style-type: none;
+}
+
+.navbar .nav-item .nav-link {
+    text-decoration: none;
+    display: block;
+    padding: 30px 14px;
+    font-size: 1rem;
+    color: black;
+}
+
+.menu-icon {
+    gap: 20px;
+    padding: 0 6px;
+}
+
+.menu-icon a {
+    width: 30px;
+    height: 30px;
+    background-color: var(--Primary-Color);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+}
+
+.menu-icon a i{
+    color: white;
+    font-size: .8rem;
+}
+
+.menu-icon .fa-cart-shopping {
+    position: relative;
+}
+
+.fa-cart-shopping::after {
+    position: absolute;
+    content: '0';
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    top: -13px;
+    right: -13px;
+    border-radius: 50%;
+    font-size: .5rem;
+    line-height: 15px;
+}
+
+/* // Portfolio // */
+.portfolio center,
+.team-member center {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: var(--fw-Medium);
+    color: var(--Primary-Color);
+    margin-bottom: 1.5rem;
+}
+
+.portfolio h1,
+.team-member h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+    margin-bottom: 3rem;
+}
+
+.portfolio .nav-tab {
+    margin-bottom: 3rem;
+}
+
+.portfolio .nav-tab ul {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    flex-wrap: wrap;
+}
+
+.portfolio .nav-tab ul .tab-item {
+    list-style-type: none;
+}
+
+.portfolio .nav-tab ul .tab-item .tab-link.active {
+    background-color: var(--Primary-Color);
+    color: white;
+}
+
+.portfolio .nav-tab ul .tab-item .tab-link {
+    text-decoration: none;
+    padding: 9px 30px;
+    background-color: #f2f4ff;
+    color: black;
+    display: block;
+    border-radius: 6px;
+    transition: .3s;
+}   
+
+.portfolio .nav-tab ul .tab-item .tab-link:hover {
+    background-color: var(--Primary-Color);
+    color: white;
+}
+
+.portfolio .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio .row .col-4 {
+    width: calc(100% / 3 - 20px);
+}
+
+.portfolio .row .col-4 .card {
+    height: 412px;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .row .col-4 .card .portfolio-ol-content{
+    position: absolute;
+    width: 80%;
+    padding: 20px 20px;
+    background-color: var(--Primary-Color);
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.portfolio-ol-content .overlay-icon {
+    margin-bottom: 20px;
+    gap: 15px;
+    display: flex;
+}
+
+.portfolio-ol-content .overlay-icon .icon-bg {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    line-height: 43px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.portfolio-ol-content .overlay-icon i {
+    color: var(--Primary-Color);
+    font-size: 1.1rem;
+}
+
+.portfolio-ol-content .overlay-txt h3,
+.portfolio-ol-content .overlay-txt p {
+    color: white;
+}
+
+.portfolio-ol-content .overlay-icon .icon-bg:hover {
+    background-color: var(--Sec-Primary-Color);
+}
+
+.portfolio-ol-content .overlay-icon .icon-bg:hover i {
+    color: white;
+    transition: .4s;
+    transition-delay: .3s;
+}
+
+.portfolio .row .col-4 .card:hover .portfolio-ol-content{
+    bottom: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio .row .col-4 .card:hover img {
+    transform: scale(1.1);
+}
+
+.team-member {
+    background-color: #eff2f7;
+}
+
+.team-member .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-member .row .col-3 {
+    width: calc(100% / 4 - 15px);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.team-member .row .col-3 .card-img {
+    height: 321px;
+    position: relative;
+}
+
+.team-member .team-info {
+    padding: 30px 0;
+    text-align: center;
+    background-color: white;
+    border-bottom: 3px solid var(--Primary-Color);
+}
+
+.team-member .team-info span {
+    color: var(--Primary-Color);
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.team-member .row .col-3:hover {
+    transform: translateY(-15px);
+}
+
+.team-ol-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0c5bdbbd;
+    transition: .3s;
+    opacity: 0;
+}
+
+.t-ol-relative {
+    position: relative;
+}
+
+.t-ol-relative .t-social {
+    position: absolute;
+    padding: 15px 17px;
+    right: 0;
+    top: 90px;
+    background-color: white;
+    transform: translateX(50px);
+    transition: .3s;
+}
+
+.t-ol-relative .t-social .t-icon {
+    text-align: center;
+    padding: 7px 0;
+}
+
+.t-ol-relative .t-social .t-icon a {
+    color: #0c5fdb;
+}
+
+.team-member .col-3:hover .t-social {
+    transform: translateX(0);
+}
+
+.team-member .col-3:hover .team-ol-content {
+    opacity: 1;
+}
+
+/* // Footer // */
+footer {
+    background-color: var(--Sec-Primary-Color);
+    padding: 20px 0;
+}
+
+footer .f-txt {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .f-txt p,
+footer .f-txt a {
+    color: white;
+}
+
+footer .f-txt a {
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+footer .f-txt .f-right-txt {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* // Ipad Pro // */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }    
+}
+
+/* // Ipad // */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 0!important;
+    }  
+    nav {
+        flex-direction: column;
+    }
+    .brand {
+        padding: 10px 0;
+    }
+    nav .navbar:nth-child(2) {
+        display: none;
+    }
+    nav .navbar:last-of-type {
+        display: block;
+    }
+    nav .navbar:last-of-type {
+        width: 100%;
+        display: flex;
+        padding: 20px 10px;
+        justify-content: space-between;
+        background-color: var(--Primary-Color);
+    }
+    .navbar:nth-child(3) li p,
+    .navbar:nth-child(3) li a{
+        color: white;
+        font-size: 1.5rem;
+        font-weight: var(--fw-Bold);
+    }
+    .portfolio .nav-tab ul li:last-of-type{
+        margin-top: 1%;
+    }
+}
+
+/* // Smartphone // */
+@media (max-width: 600px) {
+    .portfolio center, .team-member center {
+        font-size: .8rem;
+    }
+    .portfolio h1, .team-member h1 {
+        font-size: 1.8rem;
+    }
+    .portfolio .nav-tab ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .portfolio .nav-tab ul li:last-of-type{
+        margin-top: 0;
+    }
+    .portfolio .nav-tab ul .tab-item .tab-link {
+        text-align: center;
+    }
+    .portfolio .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .portfolio .row .col-4 {
+        width: 100%;
+    }
+    .team-member .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .team-member .row .col-3 {
+        width: 100%;
+    }
+    .team-member .row .col-3 .card-img {
+        height: 500px;
+    }
+    footer .f-txt {
+        flex-direction: column;
+    }
+    footer .f-txt p, footer .f-txt a {
+        text-align: center;
+    }
+    footer .f-txt .f-right-txt {
+        margin-top: 20px;
+    }
+    footer .f-txt .f-right-txt a{
+        font-size: .6rem;
+        margin: auto;
+    }
+}
